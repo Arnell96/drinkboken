@@ -36,7 +36,7 @@ export default function CocktailDetail(){
                 Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
                 }}
             >
-                <Text>Kopiera recept 📜</Text>
+                <Text>Kopiera ingredienserna 📜</Text>
             </Pressable>
             <Pressable style={styles.button} onPress={pickPhoto}>
                 <Text>Lägg till din bild 📷</Text>
