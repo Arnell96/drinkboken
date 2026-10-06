@@ -1,6 +1,7 @@
 import { cocktails } from "@/data/cocktails";
 import { useLocalSearchParams } from "expo-router";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Pressable, Image, StyleSheet, Text, View } from "react-native";
+import * as Speech from "expo-speech";
 
 export default function CocktailDetail(){
     const {id} = useLocalSearchParams<{id: string}>();
@@ -10,6 +11,9 @@ export default function CocktailDetail(){
             <Image source={{uri: cocktail?.image}} style={styles.image}></Image>
             <Text>{cocktail?.name}</Text>
             <Text>{cocktail?.instructions}</Text>
+            <Pressable onPress={() => Speech.speak(cocktail?.instructions ?? "")}>
+                <Text>Läs upp instruktionerna🎙️</Text>
+            </Pressable>
         </View>
     );
 }
