@@ -1,5 +1,6 @@
 import { cocktails } from "@/data/cocktails";
 import * as Clipboard from "expo-clipboard";
+import * as Haptics from "expo-haptics";
 import { useLocalSearchParams } from "expo-router";
 import * as Speech from "expo-speech";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
@@ -16,7 +17,11 @@ export default function CocktailDetail(){
             <Pressable onPress={() => Speech.speak(cocktail?.instructions ?? "")}>
                 <Text>Läs upp instruktionerna🎙️</Text>
             </Pressable>
-            <Pressable onPress={() => Clipboard.setStringAsync(cocktail?.ingredients.join("\n") ?? "")}>
+            <Pressable onPress={() => {
+                Clipboard.setStringAsync(cocktail?.ingredients.join("\n") ?? "");
+                Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+                }}
+            >
                 <Text>Kopiera ingredienser 📜</Text>
             </Pressable>
         </View>
