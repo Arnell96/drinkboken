@@ -68,7 +68,7 @@ Godkänt (G):
 - [x] Git och GitHub har använts med löpande commits under arbetet
 - [x] README.md är ifylld enligt instruktionerna
 - [x] Inlämnad i tid
-- [ ] Muntlig presentation (genomförs 7 oktober)
+- [x] Muntlig presentation (genomförs 7 oktober)
 
 Väl godkänt (VG):
 - [ ] Extern modul från reactnative.directory
